@@ -1,3 +1,17 @@
+pub trait CanBeFizzBuzzed {
+    fn get_fizzbuzz(&self) -> String;
+}
+
+impl CanBeFizzBuzzed for i32 {
+    fn get_fizzbuzz(&self) -> String {
+        match (self % 3 == 0, self % 5 == 0) {
+            (true, true) => String::from("fizzbuzz"),
+            (true, false) => String::from("fizz"),
+            (false, true) => String::from("buzz"),
+            (false, false) => self.to_string(),
+        }
+    }
+}
 
 pub fn fizzbuzz(number: i32) -> String {
     let mut output = String::from("");
