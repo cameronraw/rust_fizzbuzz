@@ -47,4 +47,14 @@ mod tests {
     fn should_return_buzz_if_divisible_by_5(#[case] input: i32){
         assert!(fizzbuzz(input).contains("buzz"));
     }
+
+    #[rstest]
+    #[case(15)]
+    #[case(30)]
+    #[case(45)]
+    #[case(60)]
+    #[case(75)]
+    fn should_return_fizzbuzz_if_divisible_by_3_and_5(#[case] input: i32){
+        assert!(fizzbuzz(input).contains("fizzbuzz"));
+    }
 }

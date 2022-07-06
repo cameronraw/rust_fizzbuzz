@@ -1,3 +1,7 @@
+use fizzbuzz::fizzbuzz;
+
 fn main() {
-    println!("Hello, world!");
+    for x in 1..=100 {
+        println!("{}", fizzbuzz(x));
+    }
 }
